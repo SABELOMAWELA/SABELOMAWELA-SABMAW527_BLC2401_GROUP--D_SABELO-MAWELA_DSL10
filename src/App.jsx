@@ -14,11 +14,11 @@ function App() {
         }
       })
       .then(data => setPosts(data))
-      .catch(error => setError(error.message));
+      .catch(error => setError('Data fetching failed'));
   }, []);
 
   if (error) {
-    return {error}
+    return <div className='Error'>{error}</div>;
   }
   return (
     <div className='card'>
